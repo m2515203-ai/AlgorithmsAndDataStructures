@@ -1,0 +1,78 @@
+{
+  "Электроника": {
+    "Смартфоны": [
+      {
+        "id": 1,
+        "name": "iPhone 15",
+        "price": 89990,
+        "brand": "Apple"
+      },
+      {
+        "id": 2,
+        "name": "Samsung Galaxy S23",
+        "price": 74990,
+        "brand": "Samsung"
+      },
+      {
+        "id": 3,
+        "name": "Xiaomi Mi 13",
+        "price": 49990,
+        "brand": "Xiaomi"
+      }
+    ],
+    "Ноутбуки": [
+      {
+        "id": 4,
+        "name": "MacBook Pro",
+        "price": 149990,
+        "brand": "Apple"
+      },
+      {
+        "id": 5,
+        "name": "Dell XPS 13",
+        "price": 99990,
+        "brand": "Dell"
+      },
+      {
+        "id": 6,
+        "name": "Asus ROG",
+        "price": 129990,
+        "brand": "Asus"
+      }
+    ]
+  },
+  "Одежда": {
+    "Мужская": [
+      {
+        "id": 7,
+        "name": "Джинсы Levi's",
+        "price": 4990,
+        "brand": "Levi's",
+        "size": "M"
+      },
+      {
+        "id": 8,
+        "name": "Футболка Nike",
+        "price": 2990,
+        "brand": "Nike",
+        "size": "L"
+      }
+    ],
+    "Женская": [
+      {
+        "id": 9,
+        "name": "Платье Zara",
+        "price": 5990,
+        "brand": "Zara",
+        "size": "S"
+      },
+      {
+        "id": 10,
+        "name": "Юбка Mango",
+        "price": 3990,
+        "brand": "Mango",
+        "size": "M"
+      }
+    ]
+  }
+}
