@@ -1,13 +1,17 @@
 import json
+import os
+import string
 
-utf8 = [chr(i) for i in range(0x10000)]
+
+
+utf8 = string.ascii_letters + string.digits + string.punctuation
 
 
 def get_new_key(key, exist_key):
     if key in exist_key:
         return exist_key[key]
     else:
-        new_key = utf8[len(exist_key)]
+        new_key = utf8[len(exist_key)].encode().decode('unicode_escape')
     exist_key[key] = new_key
     return new_key
 
@@ -56,3 +60,18 @@ def decompressed(filename):
 
 compressed('input.json')
 decompressed('compressed.json')
+
+size_compressed = os.path.getsize('compressed.json')
+size_decompressed = os.path.getsize('decompressed.json')
+
+# 557792
+print(size_compressed)
+# 597998
+print(size_decompressed)
+# 40206
+print(size_decompressed - size_compressed)
+
+
+
+
+
