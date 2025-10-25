@@ -1,0 +1,26 @@
+{
+  "user": {
+    "required": true,
+    "class": "dict",
+    "values": {
+      "id": {
+        "required": true,
+        "class": "int"
+      }
+    }
+  },
+  "city": {
+    "required": true,
+    "class": "dict",
+    "values": {
+      "name": {
+        "required": true,
+        "class": "str"
+      },
+      "citizens": {
+        "required": true,
+        "class": "list"
+      }
+    }
+  }
+}
