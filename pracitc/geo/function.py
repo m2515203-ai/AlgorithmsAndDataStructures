@@ -70,13 +70,10 @@ def calculate_direction(df):
 
         if pd.notna(cur['lat']) and pd.notna(cur['lon']) and \
                 pd.notna(prev['lat']) and pd.notna(prev['lon']):
-            # Координаты предыдущей и текущей точек
             lat1 = math.radians(prev['lat'])
             lon1 = math.radians(prev['lon'])
             lat2 = math.radians(cur['lat'])
             lon2 = math.radians(cur['lon'])
-
-            # Вычисление азимута
             dlon = lon2 - lon1
             x = math.sin(dlon) * math.cos(lat2)
             y = math.cos(lat1) * math.sin(lat2) - math.sin(lat1) * math.cos(lat2) * math.cos(dlon)
