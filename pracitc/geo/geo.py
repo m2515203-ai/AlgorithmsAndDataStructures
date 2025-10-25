@@ -3,37 +3,49 @@ import pandas as pd
 from geopy.distance import geodesic
 from matplotlib import pyplot as plt
 
-from pracitc.geo.function import calculate_distances
+from pracitc.geo.function import calculate_distances, show_grafic, show_distant, show_speed, calculate_direction
 
 df1 = pd.read_csv('data_01.csv')
 df2 = pd.read_csv('data_02.csv')
 df3 = pd.read_csv('data_03.csv')
 df4 = pd.read_csv('data_04.csv')
 
-
-
-# Добавление столбца distant для всех DataFrame
 df1['distant'] = calculate_distances(df1)
 df2['distant'] = calculate_distances(df2)
 df3['distant'] = calculate_distances(df3)
 df4['distant'] = calculate_distances(df4)
 
-# Просмотр результатов
-print("DataFrame 1:")
-print(df1.head(10))
-print(f"\nОбщее пройденное расстояние: {df1['distant'].sum():.2f} метров")
+df1['speed'] = calculate_distances(df1)
+df2['speed'] = calculate_distances(df2)
+df3['speed'] = calculate_distances(df3)
+df4['speed'] = calculate_distances(df4)
 
-plt.figure(figsize=(12, 8))
-
+df1['direction'] = calculate_direction(df1)
+df2['direction'] = calculate_direction(df2)
+df3['direction'] = calculate_direction(df3)
+df4['direction'] = calculate_direction(df4)
 datasets = [df1, df2, df3, df4]
-dataset_names = ['Dataset 1', 'Dataset 2', 'Dataset 3', 'Dataset 4']
 
-for df, name in zip(datasets, dataset_names):
-    plt.plot(df['distant'], label=name)
 
-plt.xlabel('Номер точки')
-plt.ylabel('Расстояние (метры)')
-plt.title('Расстояние между точками')
-plt.legend()
-plt.grid(True)
-plt.show()
+show_distant([df1])
+show_distant([df2])
+show_distant([df3])
+show_distant([df4])
+show_distant(datasets)
+
+print(f"\nОбщее пройденное расстояние: df 1 {df1['distant'].sum():.2f} метров")
+print(f"\nОбщее пройденное расстояние: df 2 {df2['distant'].sum():.2f} метров")
+print(f"\nОбщее пройденное расстояние: df 3 {df3['distant'].sum():.2f} метров")
+print(f"\nОбщее пройденное расстояние: df 4 {df4['distant'].sum():.2f} метров")
+
+show_speed([df1])
+show_speed([df2])
+show_speed([df3])
+show_speed([df4])
+show_speed(datasets)
+
+show_distant([df1])
+show_distant([df2])
+show_distant([df3])
+show_distant([df4])
+show_distant(datasets)
