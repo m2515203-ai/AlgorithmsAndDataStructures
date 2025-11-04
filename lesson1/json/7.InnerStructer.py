@@ -2,7 +2,7 @@ import json
 
 
 def find_by_name(json_data, name):
-    for category, subcategories in catalog.items():
+    for category, subcategories in json_data.items():
         for subcategory, products in subcategories.items():
             for product in products:
                 if product["name"] == name:
